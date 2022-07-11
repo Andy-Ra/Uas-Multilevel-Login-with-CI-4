@@ -21,6 +21,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
+$routes->setAutoRoute(false);
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
@@ -35,8 +36,18 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'HomeController::index');
+$routes->get('/Login', 'HomeController::login');
+$routes->post('/login/process', 'HomeController::processlogin', ["filter" => "noauth"]);
+$routes->get('/logout', 'HomeController::logout');
 
+$routes->get('/Admin', 'AdminController::list_karyawan', ["filter" => "auth"]);
+$routes->get('/list_karyawan', 'AdminController::list_karyawan');
+$routes->get('/Tambah_Karyawan', 'AdminController::Tambah_Karyawan');
+$routes->post('/tambahk_proses', 'TambahAkunController::process_addkaryawan');
+
+$routes->get('/Tambah_Akun', 'AdminController::Tambah_Akun', ["filter" => "auth"]);
+$routes->post('/tambaha_process', 'TambahAkunController::process_addakun');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
