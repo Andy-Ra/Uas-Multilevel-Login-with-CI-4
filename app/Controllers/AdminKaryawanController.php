@@ -2,22 +2,46 @@
 
 namespace App\Controllers;
 
+use App\Models\KaryawanModel;
 use App\Models\TambahAkunModel;
 use App\Models\TambahKaryawanModel;
 
-class TambahAkunController extends BaseController
+class AdminKaryawanController extends BaseController
 {
-    var $iduser;
+    
+    public function list_karyawan(){
+        $karyawanm = new KaryawanModel();
+        $data['varkaryawan'] = $karyawanm->ambil_karyawan();
+        $data['pager'] = $karyawanm->pager;
+        echo view('Admin/list_karyawan', $data);
+    }
+
+    
+    public function detail_karyawan($id_user){
+        $karm = new KaryawanModel();
+        $detaildt['detail_kar'] = $karm->detail_karyawan($id_user);
+        
+        echo view('Admin/Detail_Karyawan', $detaildt);
+    }
+
+    public function hapus_karyawan($id){
+        $akunm = new TambahAkunModel();
+        $karm = new TambahKaryawanModel();
+        $detaildl['hapus_kar'] = $akunm->where('id_user',$id)->first();
+
+        if($this->request->getMethod() === 'post') {
+            $akunm->where('id_user',$id)->delete();
+            $karm->where('id_user',$id)->delete();
+
+            return redirect()->to('list_karyawan')->with('lempar_ingfo', 'Berhasil menghapus data');
+        }
+        return view('Admin/Hapus_Karyawan', $detaildl);
+    }
+
+    // tambah karaawan
     public function process_addkaryawan()
     {
         if (!$this->validate([
-            'idk' => [
-                'rules' => 'required|min_length[8]|',
-                'errors' => [
-                    'required' => '{field} Harus diisi',
-                    'min_length' => '{field} Minimal 8 Karakter',
-                ]
-            ],
             'nama' => [
                 'rules' => 'required|min_length[4]|max_length[50]',
                 'errors' => [
@@ -80,7 +104,6 @@ class TambahAkunController extends BaseController
             return redirect()->back()->withInput();
         } else {
             session()->set([
-                'id_kar' => $this->request->getVar('idk'),
                 'nama' => $this->request->getVar('nama'),
                 'alamat' => $this->request->getVar('alamat'),
                 'tempat' => $this->request->getVar('tempat'),
@@ -117,26 +140,27 @@ class TambahAkunController extends BaseController
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
         } else {
-            $tambahkaryawanmodel = new TambahKaryawanModel();
-            $resultkaryawan = $tambahkaryawanmodel->insert([
-                'No_Karyawan' => session()->get('id_kar'),
-                'Nama' => session()->get('nama'),
-                'Alamat' => session()->get('alamat'),
-                'Tempat_Lahir' => session()->get('tempat'),
-                'Tanggal_Lahir' => session()->get('tanggal'),
-                'Jenis_Kelamin' => session()->get('jk'),
-                'No_Hp' => session()->get('hp'),
-                'Pendidikan' => session()->get('pendidikan'),
-                'Gaji_Pokok' => session()->get('gaji'),
-            ]);
             $tambahakunmodel = new TambahAkunModel();
             $resultakun = $tambahakunmodel->insert([
-                'No_Karyawan' =>  session()->get('id_kar'),
                 'Email' => $this->request->getVar('email'),
                 'Password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
                 'Role' => "Karyawan",
-            ]); 
-            return redirect()->to('/list_karyawan');
+            ]);
+            if($resultakun == true){
+                $tambahkaryawanmodel = new TambahKaryawanModel();
+                $resultkaryawan = $tambahkaryawanmodel->insert([
+                    'id_user' => $tambahakunmodel->getInsertID(),
+                    'Nama' => session()->get('nama'),
+                    'Alamat' => session()->get('alamat'),
+                    'Tempat_Lahir' => session()->get('tempat'),
+                    'Tanggal_Lahir' => session()->get('tanggal'),
+                    'Jenis_Kelamin' => session()->get('jk'),
+                    'No_Hp' => session()->get('hp'),
+                    'Pendidikan' => session()->get('pendidikan'),
+                    'Gaji_Pokok' => session()->get('gaji'),
+                ]);
+                return redirect()->to('/list_karyawan');
+            }
         }
     }
 }

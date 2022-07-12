@@ -37,17 +37,28 @@ $routes->setAutoRoute(false);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'HomeController::index');
-$routes->get('/Login', 'HomeController::login');
+$routes->get('/login', 'HomeController::login');
 $routes->post('/login/process', 'HomeController::processlogin', ["filter" => "noauth"]);
 $routes->get('/logout', 'HomeController::logout');
 
-$routes->get('/Admin', 'AdminController::list_karyawan', ["filter" => "auth"]);
-$routes->get('/list_karyawan', 'AdminController::list_karyawan');
-$routes->get('/Tambah_Karyawan', 'AdminController::Tambah_Karyawan');
-$routes->post('/tambahk_proses', 'TambahAkunController::process_addkaryawan');
+$routes->get('/Tambah_Karyawan', 'AdminController::Tambah_Karyawan', ["filter" => "auth"]);
+$routes->get('/Tambah_Akun', 'AdminController::Tambah_Akun', ["filter" => "auth"], ["filter" => "auth"]);
 
-$routes->get('/Tambah_Akun', 'AdminController::Tambah_Akun', ["filter" => "auth"]);
-$routes->post('/tambaha_process', 'TambahAkunController::process_addakun');
+$routes->get('/Admin', 'AdminKaryawanController::list_karyawan', ["filter" => "auth"]);
+$routes->get('/list_karyawan', 'AdminKaryawanController::list_karyawan', ["filter" => "auth"]);
+$routes->get('/detail_karyawan/(:num)', 'AdminKaryawanController::detail_karyawan/$1', ["filter" => "auth"]);
+$routes->get('/hapus_karyawan/(:num)', 'AdminKaryawanController::hapus_karyawan/$1', ["filter" => "auth"]);
+$routes->post('/hapus_karyawan/ya/(:num)', 'AdminKaryawanController::hapus_karyawan/$1', ["filter" => "auth"]);
+$routes->post('/tambahk_proses', 'AdminKaryawanController::process_addkaryawan', ["filter" => "auth"]);
+$routes->post('/tambaha_process', 'AdminKaryawanController::process_addakun', ["filter" => "auth"]);
+
+//tugas karyawan
+$routes->get('/tambah_tugas', 'AdminTugasController::tambah_tugas', ["filter" => "auth"]);
+$routes->post('/tambaht_proses', 'AdminTugasController::process_addtugas', ["filter" => "auth"]);
+$routes->get('/list_tugas', 'AdminTugasController::tampil_tugas', ["filter" => "auth"]);
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -18,7 +18,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading text-white">Karyawan</div>
-                        <a class="nav-link text-white" href="list_karyawan">
+                        <a class="nav-link text-white" href="../list_karyawan">
                             <div class="sb-nav-link-icon text-white">
                                 <i>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
@@ -26,9 +26,9 @@
                                     </svg>
                                 </i>
                             </div>
-                            List Karyawan
+                            Daftar Karyawan
                         </a>
-                        <a class="nav-link text-white" href="/Tambah_Karyawan">
+                        <a class="nav-link text-white" href="../Tambah_Karyawan">
                             <div class="sb-nav-link-icon text-white">
                                 <i>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
@@ -40,7 +40,7 @@
                             Tambah Karyawan
                         </a>
                         <div class="sb-sidenav-menu-heading text-white">Manajemen Tugas</div>
-                        <a class="nav-link text-white" href="index.html">
+                        <a class="nav-link text-white" href="../list_tugas">
                             <div class="sb-nav-link-icon text-white">
                                 <i>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16">
@@ -48,9 +48,9 @@
                                     </svg>
                                 </i>
                             </div>
-                            List Tugas
+                            List Tugas Karyawan
                         </a>
-                        <a class="nav-link text-white" href="index.html">
+                        <a class="nav-link text-white" href="../tambah_tugas">
                             <div class="sb-nav-link-icon text-white">
                                 <i>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
@@ -85,6 +85,10 @@
                     </div>
                     
                     <div class="mt-5 text-secondary">
+                        <div class="small pt-5 ">.</div>
+                        .
+                        <div class="small pt-5 ">.</div>
+                        .
                         <div class="small pt-5 ">.</div>
                         .
                     </div>

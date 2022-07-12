@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class TambahKaryawanModel extends Model
 {
     protected $table = "karyawan";
-    protected $primaryKey = "No_Karyawan";
+    protected $primaryKey = "id";
     protected $returnType = "object";
-    protected $allowedFields = ['No_Karyawan','Nama', 'Alamat', 'Tempat_Lahir', 'Tanggal_Lahir', 'Jenis_Kelamin', 'No_Hp', 'Pendidikan', 'Gaji_Pokok'];
+    protected $allowedFields = ['id_user','Nama', 'Alamat', 'Tempat_Lahir', 'Tanggal_Lahir', 'Jenis_Kelamin', 'No_Hp', 'Pendidikan', 'Gaji_Pokok'];
 }

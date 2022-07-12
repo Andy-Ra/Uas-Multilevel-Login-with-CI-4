@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tugas 2</title>
+  <title>Admin Page</title>
   <link rel="stylesheet" href="<?= base_url('css/bootstrap.css') ?>">
 </head>
 

@@ -33,10 +33,6 @@
                         <input class="form-control" type="number" value="" name="idk">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Nama Karyawan</label>
-                        <input class="form-control" type="nama" value="" name="nama">
-                    </div>
-                    <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Alamat</label>
                         <input class="form-control" type="text" value="" name="alamat">
                     </div>

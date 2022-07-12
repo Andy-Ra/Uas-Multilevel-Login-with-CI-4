@@ -8,7 +8,7 @@ class HomeController extends BaseController
 {   
     public function index()
     {
-        return redirect()->route('Login');
+        return view('Login');
 
     }
     public function login()

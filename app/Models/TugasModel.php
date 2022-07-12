@@ -3,10 +3,8 @@ use CodeIgniter\Model;
 
 class TugasModel extends Model
 {
-    public function ambil_tugas()
-    {
-        return $this->db->table('karyawan')
-        ->join('tugaskaryawan','karyawan.ID_Karyawan=tugaskaryawan.ID_Karyawan')->orderby('Nama asc')
-        ->get()->getResult();
-    }
+        protected $table = "tugaskaryawan";
+        protected $primaryKey = "id";
+        protected $returnType = "object";
+        protected $allowedFields = ['id_user','Nama_Tugas', 'Tanggal_Mulai', 'Gaji_Harian', 'Lama_Pengerjaan', 'Keterangan'];
 }
