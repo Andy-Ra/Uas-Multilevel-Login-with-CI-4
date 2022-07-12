@@ -39,6 +39,19 @@
                             </div>
                             Tambah Karyawan
                         </a>
+                        <a class="nav-link text-white" href="../keuangan_karyawan">
+                            <div class="sb-nav-link-icon text-white">
+                                <i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" />
+                                        <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z" />
+                                        <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z" />
+                                        <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z" />
+                                    </svg>
+                                </i>
+                            </div>
+                            Keuangan Karyawan
+                        </a>
                         <div class="sb-sidenav-menu-heading text-white">Manajemen Tugas</div>
                         <a class="nav-link text-white" href="../list_tugas">
                             <div class="sb-nav-link-icon text-white">
@@ -61,38 +74,20 @@
                             Tambah Tugas Karyawan
                         </a>
 
-                        <a class="nav-link text-white" href="index.html">
-                            <div class="sb-nav-link-icon text-white">
-                                <i>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-font-fill" viewBox="0 0 16 16">
-                                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM5.057 6h5.886L11 8h-.5c-.18-1.096-.356-1.192-1.694-1.235l-.298-.01v5.09c0 .47.1.582.903.655v.5H6.59v-.5c.799-.073.898-.184.898-.654V6.755l-.293.01C5.856 6.808 5.68 6.905 5.5 8H5l.057-2z" />
-                                    </svg>
-                                </i>
-                            </div>
-                            Ubah Tugas Karyawan
-                        </a>
 
-                        <a class="nav-link text-white" href="index.html">
-                            <div class="sb-nav-link-icon text-white">
-                                <i>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-excel-fill" viewBox="0 0 16 16">
-                                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM5.884 6.68 8 9.219l2.116-2.54a.5.5 0 1 1 .768.641L8.651 10l2.233 2.68a.5.5 0 0 1-.768.64L8 10.781l-2.116 2.54a.5.5 0 0 1-.768-.641L7.349 10 5.116 7.32a.5.5 0 1 1 .768-.64z" />
-                                    </svg>
-                                </i>
-                            </div>
-                            Hapus Tugas
-                        </a>
+                        <div class="mt-5 text-secondary">
+                            <div class="small pt-5 ">.</div>
+                            .
+                            <div class="small pt-5 ">.</div>
+                            .
+                            <div class="small pt-5 ">.</div>
+                            .
+                            <div class="small pt-5 ">.</div>
+                            .
+                            <div class="small pt-5 ">.</div>
+                            .
+                        </div>
                     </div>
-                    
-                    <div class="mt-5 text-secondary">
-                        <div class="small pt-5 ">.</div>
-                        .
-                        <div class="small pt-5 ">.</div>
-                        .
-                        <div class="small pt-5 ">.</div>
-                        .
-                    </div>
-                </div>
             </nav>
         </div>
 </body>

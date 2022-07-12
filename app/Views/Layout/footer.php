@@ -2,7 +2,7 @@
 </body>
 <footer class="sticky-footer">
   <div class="container my-auto">
-    <div class="copyright text-center my-auto">
+    <div class="copyright text-center my-auto text-white">
       <span>Created by Andy - Ra </span>
       <div>
         <span> Copyright ©2022 </span>

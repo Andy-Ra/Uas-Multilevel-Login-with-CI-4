@@ -8,7 +8,7 @@
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-success static-top bg-dark"">
 
-    <a class=" navbar-brand mr-1" href="<?php echo site_url('../list_karyawan') ?>">Void Corp</a>
+    <a class=" navbar-brand mr-1" href="<?php echo site_url('../') ?>">Void Corp</a>
 
         <ul class="navbar-nav ml-auto">
             <a class="nav-link" href="<?= base_url('logout') ?>">

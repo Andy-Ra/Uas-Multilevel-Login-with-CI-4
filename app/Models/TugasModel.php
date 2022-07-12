@@ -6,5 +6,5 @@ class TugasModel extends Model
         protected $table = "tugaskaryawan";
         protected $primaryKey = "id";
         protected $returnType = "object";
-        protected $allowedFields = ['id_user','Nama_Tugas', 'Tanggal_Mulai', 'Gaji_Harian', 'Lama_Pengerjaan', 'Keterangan'];
+        protected $allowedFields = ['id_user','Nama_Tugas', 'Tanggal_Mulai', 'Gaji_Harian', 'Lama_Pengerjaan', 'status', 'Keterangan'];
 }

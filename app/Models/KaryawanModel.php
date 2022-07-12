@@ -24,4 +24,28 @@ class KaryawanModel extends Model
         ->get()->getResult();
     }
     
+    public function list_tugas($id_user)
+    {
+        return $this->db->table('karyawan')
+        ->join('tugaskaryawan','karyawan.id_user=tugaskaryawan.id_user')
+        ->where('karyawan.id_user', $id_user)->get()->getResult();
+    }
+
+    
+    public function detail_tugas($id)
+    {
+        return $this->db->table('karyawan')
+        ->join('tugaskaryawan','karyawan.id_user=tugaskaryawan.id_user')
+        ->where('tugaskaryawan.id', $id)->get()->getResult();
+    }
+
+    
+    public function tampil_Uang()
+    {
+        return $this->db->table('karyawan')
+        ->join('tugaskaryawan','karyawan.id_user=tugaskaryawan.id_user')
+        ->groupBy('count')
+        ->get()->getResult();
+    }
+    
 }

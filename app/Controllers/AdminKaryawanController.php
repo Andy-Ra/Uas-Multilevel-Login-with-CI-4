@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\KaryawanModel;
 use App\Models\TambahAkunModel;
 use App\Models\TambahKaryawanModel;
+use App\Models\TugasModel;
 
 class AdminKaryawanController extends BaseController
 {
@@ -27,11 +28,13 @@ class AdminKaryawanController extends BaseController
     public function hapus_karyawan($id){
         $akunm = new TambahAkunModel();
         $karm = new TambahKaryawanModel();
-        $detaildl['hapus_kar'] = $akunm->where('id_user',$id)->first();
+        $tugas = new TugasModel();
+        $detaildl['hapus_kar'] = $karm->where('id_user',$id)->first();
 
         if($this->request->getMethod() === 'post') {
-            $akunm->where('id_user',$id)->delete();
+            $tugas->where('id_user',$id)->delete();
             $karm->where('id_user',$id)->delete();
+            $akunm->where('id_user',$id)->delete();
 
             return redirect()->to('list_karyawan')->with('lempar_ingfo', 'Berhasil menghapus data');
         }
@@ -162,5 +165,13 @@ class AdminKaryawanController extends BaseController
                 return redirect()->to('/list_karyawan');
             }
         }
+    }
+
+
+    public function keuangan(){
+        $karm = new KaryawanModel();
+        $data['detailuang'] = $karm->tampil_Uang();
+        
+        echo view('Admin/Keuangan_Karyawan', $data);
     }
 }

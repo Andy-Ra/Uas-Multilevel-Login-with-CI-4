@@ -51,12 +51,24 @@ $routes->get('/hapus_karyawan/(:num)', 'AdminKaryawanController::hapus_karyawan/
 $routes->post('/hapus_karyawan/ya/(:num)', 'AdminKaryawanController::hapus_karyawan/$1', ["filter" => "auth"]);
 $routes->post('/tambahk_proses', 'AdminKaryawanController::process_addkaryawan', ["filter" => "auth"]);
 $routes->post('/tambaha_process', 'AdminKaryawanController::process_addakun', ["filter" => "auth"]);
+$routes->get('/keuangan_karyawan', 'AdminKaryawanController::keuangan', ["filter" => "auth"]);
 
 //tugas karyawan
 $routes->get('/tambah_tugas', 'AdminTugasController::tambah_tugas', ["filter" => "auth"]);
 $routes->post('/tambaht_proses', 'AdminTugasController::process_addtugas', ["filter" => "auth"]);
 $routes->get('/list_tugas', 'AdminTugasController::tampil_tugas', ["filter" => "auth"]);
+$routes->get('/detail_tugas/(:num)', 'AdminTugasController::detail_tugas/$1', ["filter" => "auth"]);
+$routes->get('/ubah_tugas/(:num)', 'AdminTugasController::ubah_tugas/$1', ["filter" => "auth"]);
+$routes->post('/update_tugass/(:num)', 'AdminTugasController::update_tugass/$1', ["filter" => "auth"]);
+$routes->post('/hapus_tugas/(:num)', 'AdminTugasController::hapus_tugas/$1', ["filter" => "auth"]);
 
+// karyawan
+
+$routes->get('/Karyawan', 'KaryawanController::Biodata', ["filter" => "auth"]);
+$routes->get('/biodata_karyawan', 'KaryawanController::Biodata', ["filter" => "auth"]);
+$routes->get('/ubah_biodata', 'KaryawanController::HUbahBiodata', ["filter" => "auth"]);
+$routes->post('/update_biodata/(:num)', 'KaryawanController::update_data/$1', ["filter" => "auth"]);
+$routes->get('/tugas_karyawan', 'KaryawanController::tugas_karyawan', ["filter" => "auth"]);
 
 
 /*

@@ -19,7 +19,7 @@
                         <h2>Hapus Data Karyawan</h2>
                         <p>Apakah Anda Yakin ??</p>
 
-                        <?= form_open("hapus_karyawan/ya/".$hapus_kar->No_Karyawan) ?>
+                        <?= form_open("hapus_karyawan/ya/".$hapus_kar->id_user) ?>
                         <button class="btn btn-primary">Ya</button>
                         <a href="<?= site_url('/list_karyawan') ?>" class="btn btn-danger">Tidak</a>
                         </form>

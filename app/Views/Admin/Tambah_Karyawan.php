@@ -29,8 +29,8 @@
                 <form method="post" action="<?= base_url(); ?>/tambahk_proses">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">ID Karyawan</label>
-                        <input class="form-control" type="number" value="" name="idk">
+                        <label for="exampleFormControlInput1" class="form-label">Nama Karyawan</label>
+                        <input class="form-control" type="nama" value="" name="nama">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Alamat</label>

@@ -8,7 +8,15 @@ class HomeController extends BaseController
 {   
     public function index()
     {
-        return view('Login');
+        if(session()->get('role') == "Admin"){
+            return redirect()->to(base_url('Admin'));
+        }
+        else if(session()->get('role') == "Karyawan"){
+            return redirect()->to(base_url('Karyawan'));
+        }
+        else{
+            return view('Login');
+        }
 
     }
     public function login()
@@ -26,7 +34,7 @@ class HomeController extends BaseController
         if ($datalogin) {
             if (password_verify($pass, $datalogin->Password)) {
                 session()->set([
-                    'email' => $datalogin->Email,
+                    'id_user' => $datalogin->ID_User,
                     'role' => $datalogin->Role,
                     'menglogin' => TRUE
                 ]);
@@ -34,7 +42,7 @@ class HomeController extends BaseController
                     return redirect()->to(base_url('Admin'));
                 }
                 else if(session()->get('role') == "Karyawan"){
-                    return redirect()->to(base_url('home_dosen'));
+                    return redirect()->to(base_url('Karyawan'));
                 }
                 else{
                     return redirect()->to(base_url('login'));

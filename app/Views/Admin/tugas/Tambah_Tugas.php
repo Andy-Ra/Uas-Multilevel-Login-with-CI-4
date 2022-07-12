@@ -52,10 +52,6 @@
                         <input class="form-control" type="number" value="" name="gaji">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Lama Pengerjaan (Hari)</label>
-                        <input class="form-control" type="number" value="" name="waktu">
-                    </div>
-                    <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Keterangan (Opsional)</label>
                         <input class="form-control" type="text" value="" name="keterangan">
                     </div>
